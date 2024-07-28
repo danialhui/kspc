@@ -35,6 +35,12 @@ ObjectSorter is watching `data/in` directoty, to generate input, execute
 java -classpath bin RandomObjectGenerator data/in/my_random_objects.txt
 ```
 
+or use 
+```
+sh generateObjects.sh
+```
+
+
 ### Cleanup
 To clean up, execute
 
