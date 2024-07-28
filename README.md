@@ -13,4 +13,4 @@ Create a program that will read the generated file above and print to the consol
 ## Challenge C
 Dockerize Challenge B. Write a docker file so that it reads the output from Challenge A as an Input. Once this container is started, the program in challenge B is executed to process this file. The output should be saved in a file and should be exposed to the Docker host machine.
 
-`dockerfile`
+`Dockerfile`

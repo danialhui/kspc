@@ -44,7 +44,7 @@ public class ObjectsSorter {
         if (matcher4.matches()) {
             return "Alphanumeric";
         }
-        System.out.println("ERROR : " + object);
+        //System.out.println("ERROR : " + object);
         return "ERROR";
     }
 
@@ -55,14 +55,14 @@ public class ObjectsSorter {
         // Format the current date and time
         String formattedTimestamp = now.format(formatter);
         // Print the formatted timestamp
-        System.out.println("Current Timestamp: " + formattedTimestamp);
+        //System.out.println("Current Timestamp: " + formattedTimestamp);
         return formattedTimestamp;
     }
 
     public static void processFile(String fileIn, String fileOut) throws IOException {
         fileOut = fileOut.substring(0, fileOut.lastIndexOf(".txt")) + "_"+ getTimestamp() + ".txt";
-        System.out.println("fileOut : " + fileOut);
-        System.out.println("fileIn : " + fileIn);
+        //System.out.println("fileOut : " + fileOut);
+        //System.out.println("fileIn : " + fileIn);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileOut))) {
             try (BufferedReader reader = new BufferedReader(new FileReader(fileIn))) {
                 String line;
@@ -80,7 +80,7 @@ public class ObjectsSorter {
                 }
                 reader.close();
                 writer.close();
-                System.out.println("FILES CLOSED");
+                //System.out.println("FILES CLOSED");
             }
         }
     }
@@ -89,23 +89,16 @@ public class ObjectsSorter {
         String fileIn = (args == null || args.length <= 0) ? "random_objects.txt" : args[0];
         String fileOut = (args == null || args.length <= 1) ? "proccessed_objects.txt" : args[1];
 
-        // String currentDir = System.getProperty("user.dir");
         String fileSeparator = System.getProperty("file.separator");
 
         String fileOutDir = fileOut.substring(0, fileOut.lastIndexOf(fileSeparator));
-        // currentDir +
-        // fileSeparfileOut.substring(0,fileOut.lastIndexOf(fileSeparator));ator +
-        // "data"+ fileSeparator + "out";
         String fileInDir = fileIn.substring(0, fileIn.lastIndexOf(fileSeparator));
-        // currentDir + fileSeparator + "data"+ fileSeparator +"in";
-
-        // String fileOut = fileOutDir + fileSeparator + outputFile;
-        // String fileIn = fileInDir + fileSeparator + inputFile;
-
-        System.out.println(fileOut);
-        System.out.println(fileIn);
-        System.out.println(fileOutDir);
-        System.out.println(fileInDir);
+        
+        //System.out.println(fileOut);
+        //System.out.println(fileIn);
+        //System.out.println(fileOutDir);
+        //System.out.println(fileInDir);
+        System.out.println("--------- Starting Object Sorter Service ---------");
 
         try {
             WatchService watchService = FileSystems.getDefault().newWatchService();
@@ -127,8 +120,8 @@ public class ObjectsSorter {
                     WatchEvent<Path> ev = (WatchEvent<Path>) event;
                     Path fileName = ev.context();
 
-                    System.out.println(kind.name() + ": " + fileName);
-                    System.out.println("Event kind : " + event.kind() + " - File : " + event.context());
+                    //System.out.println(kind.name() + ": " + fileName);
+                    //System.out.println("Event kind : " + event.kind() + " - File : " + event.context());
 
                     // Perform actions based on the event kind and file name
                     if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
