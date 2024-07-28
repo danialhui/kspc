@@ -2,7 +2,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Random;
 
@@ -78,10 +77,6 @@ public class RandomObjectGenerator {
     }
     public static void main(String[] args) throws IOException {
         String outputFile = (args == null || args.length <= 0)  ? "random_objects.txt" : args[0];
-        
-        //String currentDir = System.getProperty("user.dir");
-        //String fileSeparator = System.getProperty("file.separator");
-        System.out.println("RandomObjectGenerator outputFile : "+outputFile);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             while (Files.size(Paths.get(outputFile)) < DEFAULT_SIZE) {
                 String randomObj = generateRandomObjects();
