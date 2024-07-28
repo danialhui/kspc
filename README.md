@@ -23,7 +23,9 @@
 
 ### Build and Deploy
 To build and deploy the program, execute
-`sh run.sh`
+```
+sh run.sh
+```
 
 
 
@@ -36,4 +38,6 @@ java -classpath bin RandomObjectGenerator data/in/my_random_objects.txt
 ### Cleanup
 To clean up, execute
 
-`sh cleanup.sh`
+```
+sh cleanup.sh
+```
